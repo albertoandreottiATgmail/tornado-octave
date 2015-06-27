@@ -1,0 +1,53 @@
+<html>
+<script src="jquery-1.9.1.js"></script>
+<script src="handwrite.js"></script>
+
+<script type="text/javascript">
+var canvas, ctx, flag=false, prevX=0, currX=0, prevY=0, currY=0, dot_flag=false;
+var x="black",y=2;
+var handwrite;
+
+function letterFound(letter){
+
+}
+
+function wordFound(letter){
+
+}
+
+function init()
+{
+    trainDigit = 4;
+    canvas=document.getElementById('can');
+    person=document.getElementById('person').value;
+    handwrite = new Handwrite(canvas, letterFound, wordFound);
+	
+} 
+
+
+</script>
+
+<body onload="init()">
+
+	<h1>Handwrite training</h1>
+
+	<p>Use your mouse to draw digits on the canvas!, introduce your name, choose the digit to generate training for, look in the squared in the left bottom corner, and once you're satisfied, press the send button.</p>
+        <canvas id="can" width="400"height="400" style="position:absolute;top:40%;left:30%;border:2px solid;"></canvas>
+    	<input type="button" value="send" id="btn" size="30" onclick="send()"style="position:absolute;top:75%;left:1%;">
+    	<input type="button" value="clear" id="clr" size="23" onclick="erase()"style="position:absolute;top:75%;left:7%;">
+	<input type="text" id="person">
+	
+	<select id="trainDigit">
+		<option value="10">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+	</select>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<script src="jquery-1.9.1.js"></script>
+<script src="handwrite.js"></script>
+
+<script type="text/javascript">
+var canvas, ctx, flag=false, prevX=0, currX=0, prevY=0, currY=0, dot_flag=false;
+var x="black",y=2;
+var handwrite;
+
+function letterFound(data){
+
+    var old = document.getElementById('myTextarea').value;
+    document.getElementById('myTextarea').value = old + data;
+    console.log(data);
+}
+
+function wordFound(word){
+
+}
+
+function init()
+{
+    var textarea = document.getElementById('myTextarea');
+    textarea.style.fontSize = "26px";
+    canvas=document.getElementById('can');
+    handwrite = new Handwrite(canvas, letterFound, wordFound);
+	
+} 
+
+
+</script>
+
+<body onload="init()">
+
+	<h1>Handwrite recognition demo</h1>
+
+	<p>Use your mouse to draw digits on the canvas!</p>
+        <canvas id="can" width="400"height="400" style="position:absolute;top:22%;left:40%;border:2px solid;"></canvas>
+	<p>The handwriting used to train it looks like below, </p>
+	<img src="digits.png" alt="The handwriting used to train it looks like that.">
+        
+
+    <input type="button" value="save" id="btn" size="30" onclick="save()"style="position:absolute;top:75%;left:1%;">
+    <input type="button" value="clear" id="clr" size="23" onclick="erase()"style="position:absolute;top:75%;left:7%;">
+
+    <textarea rows="2" cols="24" id="myTextarea" style="position:absolute;top:7%;left:40%;border:2px solid;">
+    
+    </textarea>
+
+</body>
+</html>
