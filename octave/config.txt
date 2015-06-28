@@ -1,0 +1,49 @@
+{
+    "title": "Handwrite recognition",
+    "description" : "This script is used to test the input and outputs",
+    "timeout" : 10000,
+    "source_public" : "0",
+    "results_unfold" : "0",
+    "figures_unfold" : "1",
+    "files_unfold" : "0",
+    "parameters" :
+    {
+
+        "image" :
+        {
+            "caption" : "matrix",
+            "description" : "an ordinal Matlab matrix of doubles",
+            "type"    : "matrix",
+            "min"     : "-1000",
+            "max"     : "1000",
+            "default" : "[1,0;1,2]",
+            "rows"    : "",
+            "columns" : ""
+        },
+
+        "person" :
+        {
+            "caption" : "string",
+            "description" : "an ordinal Matlab matrix of doubles",
+            "type"    : "string",
+            "min"     : "-1000",
+            "max"     : "1000",
+            "default" : "[1,0;1,2]",
+            "rows"    : "",
+            "columns" : ""
+        },
+	
+	"trainDigit" :
+        {
+            "caption" : "matrix",
+            "description" : "tells if we're training, and on which digit",
+            "type"    : "int16",
+            "min"     : "-1000",
+            "max"     : "1000",
+            "default" : "[1,0;1,2]",
+            "rows"    : "",
+            "columns" : ""
+        }
+
+    }
+}

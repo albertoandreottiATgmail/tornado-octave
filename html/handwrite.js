@@ -17,7 +17,7 @@ function Handwrite(canvas, letterFound, wordFound) {
 	this.wordHandler = wordFound;
 	this.ctx=canvas.getContext("2d");
 	w=canvas.width;
-    h=canvas.height;
+        h=canvas.height;
 
     if(navigator.userAgent.match(/Android/i)){
         canvas.addEventListener("touchmove", function(e){ findxy('move',e)}, false);
@@ -222,18 +222,18 @@ function postImage(samples){
 
     $.ajax({
 					type: 'POST',
-					url: "/index.php",
+					url: "/digit",
 					data: fd,
 					processData: false,
 					contentType: false
 					}).done(function(data) {
 					    //minor corrections to cope with NN coding.
-					    var number = data.match("pred.*")
-                        number[0]= number[0].replace("10", "0");
-						//call the handler
-						handwrite.letterHandler(number[0].substring(8, 9));
+                                            var number = data.match("pred.*")
+                                            number[0]= number[0].replace("10", "0");
+					    //call the handler
+                                            handwrite.letterHandler(number[0].substring(7, 9));
 					});
-}
+    }
 
 
 

@@ -6,7 +6,7 @@ import tornado.ioloop
 import tornado.web
 
 
-from handlers.wshandler import WSHandler 
+from handlers.wshandler import DigitHandler 
 #from handlers.lochandler import TraceHandler
 #from handlers.confhandler import ConfigHandler
 
@@ -15,7 +15,7 @@ class Application(tornado.web.Application):
     def __init__(self):
      
         handlers = [
-            (r'/ws', WSHandler),
+            (r'/digit', DigitHandler),
             (r'/(.*)', tornado.web.StaticFileHandler, {'path': 'html/'})
         ]
         
