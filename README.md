@@ -4,7 +4,7 @@ Example of how to couple Tornado with Octave. This demo is going to show
 Necessary Packages.
 
 Install complete stack and dependencies,
-'''
+```
 sudo apt-get update
 sudo apt-get install git
 git clone https://github.com/albertoandreottiATgmail/tornado-octave.git
@@ -16,7 +16,7 @@ sudo pip install scipy
 sudo pip install numpy
 sudo pip install tornado
 sudo pip install oct2py
-'''
+```
 If all that went well just try,
 
 tornado-octave> python server.py
